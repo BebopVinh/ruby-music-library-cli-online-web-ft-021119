@@ -1,6 +1,9 @@
 class MusicLibraryController
   attr_reader :importer, :input
+<<<<<<< HEAD
   attr_accessor :list
+=======
+>>>>>>> 731e690c7c31957dd0799caaf013927bc8556bf5
 
   def initialize(path = './db/mp3s')
     @importer = MusicImporter.new(path)
@@ -24,6 +27,7 @@ class MusicLibraryController
 
   #-----------CLI Methods--------------------
   def list_songs
+<<<<<<< HEAD
     @list = Song.all.sort!{|a,b| a.name <=> b.name}
     @list.each_with_index do |song, i|
       puts "#{i+1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
@@ -81,3 +85,11 @@ class MusicLibraryController
 
 
 end #END OF CLASS
+=======
+    self.importer.files.each_with_index do |file, i|
+      # binding.pry
+      puts "#{i+1}. #{file}"
+    end
+  end
+end
+>>>>>>> 731e690c7c31957dd0799caaf013927bc8556bf5

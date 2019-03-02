@@ -9,6 +9,7 @@ class MusicImporter
 
   def files
     files = Dir.entries(@path).keep_if{|file| file.end_with?('.mp3')}
+    files.map {|file| file.delete('.mp3')}
   end
 
   def import
